@@ -26,17 +26,25 @@ jobs:
       - name: Checkout repo code
         uses: actions/checkout@v2
 
-      # Setup MSYS2 + install dependencies
+      # Setup MSYS2
       - name: MSYS2
         uses: msys2/setup-msys2@v2
         with: 
           msystem: MINGW64
           update: true
-          install: [git, wget, make, tar, unzip, zip, mingw-w64-x86_64-gcc, mingw-w64-x86_64-gdb, mingw-w64-x86_64-cmake, autoconf, automake, mingw-w64-x86_64-libtool, mingw-w64-x86_64-jq, python, zstd]
-          
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          install: >-
+            git 
+            wget 
+            make 
+            tar 
+            unzip
+            zip
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-gdb
+            mingw-w64-x86_64-cmake
+            autoconf
+            automake
+            mingw-w64-x86_64-libtool
+            mingw-w64-x86_64-jq
+            python
+            zstd
