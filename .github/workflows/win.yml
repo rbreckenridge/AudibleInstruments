@@ -27,6 +27,7 @@ jobs:
 
       - name: where am i
         run: cd
+        uses: shell
 
       # Setup MSYS2
       # - name: MSYS2
@@ -56,3 +57,8 @@ jobs:
         with:
           url: 'https://vcvrack.com/downloads/RackFree-2.0.6-win.exe'
           destination: Rack
+
+     - name: See Rack
+       run: |
+         dir
+         dir Rack  
