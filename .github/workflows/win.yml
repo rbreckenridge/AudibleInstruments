@@ -48,8 +48,8 @@ jobs:
       #       python
       #       zstd
 
-     - name: Download Rack
-        uses: actions/schmiddim-wget-unzip@v1
-        with:
-          url: 'https://vcvrack.com/downloads/RackFree-2.0.6-win.exe'
-          destination: Rack
+    #  - name: Download Rack
+    #     uses: actions/schmiddim-wget-unzip@v1
+    #     with:
+    #       url: 'https://vcvrack.com/downloads/RackFree-2.0.6-win.exe'
+    #       destination: Rack
