@@ -53,8 +53,3 @@ jobs:
         with:
           url: 'https://vcvrack.com/downloads/RackFree-2.0.6-win.exe'
           destination: Rack
-
-     - name: See Rack
-       run: |
-         dir
-         dir Rack  
