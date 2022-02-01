@@ -52,9 +52,9 @@ jobs:
           path: Rack
           submodules: recursive
           
-     - name: Build Rack
-       shell: msys2 {0}
-       working-directory: Rack
-       run: |
-         make dep
-         make
+    #  - name: Build Rack
+    #    shell: msys2 {0}
+    #    working-directory: Rack
+    #    run: |
+    #      make dep
+    #      make
