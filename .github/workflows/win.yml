@@ -18,10 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     runs-on: windows-latest
-    
-    defaults:
-      run:
-        shell: msys2 {0}
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Setup MSYS2
@@ -57,7 +54,6 @@ jobs:
 
      - name: Where am I?
        run: |
-         cd
+         Get-Location
          dir
-       shell: cmd   
           
