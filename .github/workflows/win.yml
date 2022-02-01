@@ -25,10 +25,6 @@ jobs:
       - name: Checkout repo code
         uses: actions/checkout@v2
 
-      - name: where am i
-        run: cd
-        uses: shell
-
       # Setup MSYS2
       # - name: MSYS2
       #   uses: msys2/setup-msys2@v2
