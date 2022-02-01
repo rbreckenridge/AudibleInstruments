@@ -56,4 +56,11 @@ jobs:
       - name: Build Rack
         shell: msys2 {0}
         working-directory: Rack
-        run: make dep
+        run: |
+          make dep
+          make
+
+      - name: Where am I
+        run: |
+          Get-Location
+          dir
