@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: build
     runs-on: windows-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -52,7 +53,7 @@ jobs:
           path: Rack
           submodules: recursive
           
-     - name: Build Rack
-       shell: msys2 {0}
-       working-directory: Rack
-       run: make dep
+      - name: Build Rack
+        shell: msys2 {0}
+        working-directory: Rack
+        run: make dep
