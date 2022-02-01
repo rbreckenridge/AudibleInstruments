@@ -46,9 +46,18 @@ jobs:
             mingw-w64-x86_64-jq
             python
             zstd
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout repo code
+ 
+      - name: Get Rack Source
         uses: actions/checkout@v2
-      - run: |
-          cd
-          dir
+        with:
+          name: VCVRack/Rack
+          ref: v2
+          path: Rack
+          submodules: recursive
+
+     - name: Where am I?
+       run: |
+         cd
+         dir
+       shell: cmd   
+          
