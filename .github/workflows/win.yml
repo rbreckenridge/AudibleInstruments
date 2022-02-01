@@ -54,7 +54,5 @@ jobs:
           
      - name: Build Rack
        shell: msys2 {0}
-    #   working-directory: Rack
-       run: |
-         make dep
-         make
+       working-directory: Rack
+       run: make dep
