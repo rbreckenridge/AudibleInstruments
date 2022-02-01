@@ -47,8 +47,14 @@ jobs:
       - name: Get Rack Source
         uses: actions/checkout@v2
         with:
-          name: VCVRack/Rack
+          repository: VCVRack/Rack
           ref: v2
           path: Rack
           submodules: recursive
           
+     - name: Build Rack
+       shell: msys2 {0}
+       working-directory: Rack
+       run: |
+         make dep
+         make
