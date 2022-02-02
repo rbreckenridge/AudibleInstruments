@@ -60,7 +60,23 @@ jobs:
           make dep
           make
 
-      - name: Where am I
+      - name: Get Repo Source
+        uses: actions/checkout@v2
+        with:
+          path: Rack\plugins\AudibleInstruments
+          ref: v2
+          submodules: recursive
+
+      - name: Build Plugins
+        shell: msys2 {0}
+        working-directory: Rack\plugins\AudibleInstruments
         run: |
-          Get-Location
-          dir
+          make dep
+          make 
+          make dist
+
+      - name: Upload output file
+        uses: actions/upload-artifact@v2
+        with:
+          name: windows_build
+          path: Rack\plugins\**\dist\*.vcvplugin
