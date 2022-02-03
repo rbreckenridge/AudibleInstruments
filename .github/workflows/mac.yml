@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Build Windows
+name: Build WindowsMac
 
 # Controls when the workflow will run
 on:
@@ -18,32 +18,12 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     name: build
-    runs-on: windows-latest
+    runs-on: macos-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Setup MSYS2
-      - name: MSYS2
-        uses: msys2/setup-msys2@v2
-        with: 
-          msystem: MINGW64
-          update: true
-          install: >-
-            git 
-            wget 
-            make 
-            tar 
-            unzip
-            zip
-            mingw-w64-x86_64-gcc
-            mingw-w64-x86_64-gdb
-            mingw-w64-x86_64-cmake
-            autoconf
-            automake
-            mingw-w64-x86_64-libtool
-            mingw-w64-x86_64-jq
-            python
-            zstd
+      - name: deps
+        run: brew install git wget cmake autoconf automake libtool jq python zstd
  
       - name: Get Rack Source
         uses: actions/checkout@v2
@@ -78,5 +58,5 @@ jobs:
       - name: Upload output file
         uses: actions/upload-artifact@v2
         with:
-          name: windows_build
+          name: mac_build
           path: Rack\plugins\**\dist\*.vcvplugin
