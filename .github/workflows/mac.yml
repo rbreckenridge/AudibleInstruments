@@ -42,12 +42,12 @@ jobs:
       - name: Get Repo Source
         uses: actions/checkout@v2
         with:
-          path: Rack\plugins\AudibleInstruments
+          path: Rack/plugins/AudibleInstruments
           ref: v2
           submodules: recursive
 
       - name: Build Plugins
-        working-directory: Rack\plugins\AudibleInstruments
+        working-directory: Rack/plugins/AudibleInstruments
         run: |
           make dep
           make 
@@ -57,4 +57,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: mac_build
-          path: Rack\plugins\**\dist\*.vcvplugin
+          path: Rack/plugins/**/dist/*.vcvplugin
